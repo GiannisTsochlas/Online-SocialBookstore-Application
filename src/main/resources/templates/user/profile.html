@@ -7,39 +7,17 @@
     <title>Create Profile</title>
 </head>
 <body>
-<h2>Create Your Profile <span sec:authentication="name"></span></h2>
-<form th:action="@{/submit_profile}" method="POST">
-    <label for="full_name">Full Name:</label><br>
-    <input type="text" id="full_name" name="full_name" required><br><br>
-
-    <label for="address">Address:</label><br>
-    <input type="text" id="address" name="address" required><br><br>
-
-    <label for="age">Age:</label><br>
-    <input type="number" id="age" name="age" required><br><br>
-
-    <label for="phone_number">Phone Number:</label><br>
-    <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{10}" required><br><br>
-
-    <label for="book_categories">Preferred Book Categories:</label><br>
-    <select id="book_categories" name="book_categories[]" multiple required>
-        <option value="Art">Art</option>
-        <option value="Comic">Comic</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="Fiction">Fiction</option>
-        <option value="Biographies">Biographies</option>
-        <option value="History">History</option>
-        <option value="Science">Science</option>
-        <option value="Literature">Literature</option>
-        <option value="Adventure">Adventure</option>
-        <option value="Crime">Crime</option>
-        <option value="Other">Other</option>
-    </select><br><br>
-
-    <label for="favorite_authors">Favorite Authors:</label><br>
-    <textarea id="favorite_authors" name="favorite_authors" rows="4" cols="50" required></textarea><br><br>
-
-    <input type="submit" value="Submit">
-</form>
+<div class="container">
+    <h2>Create Your Profile <span sec:authentication="name"></span></h2>
+    <form th:action="@{/submit_profile}" method="POST" >
+        <input type="text" name="full_name" th:placeholder="full_name" /> <br /><br />
+        <input type="text" th:placeholder="address" name="address" /> <br /><br />
+        <input type="number" th:placeholder="age" name="age" /> <br /><br />
+        <input type="text" th:placeholder="phone_number" name="phone_number" /> <br /><br />
+        <input type="text" th:placeholder="book_categories" name="book_categories" /> <br /><br />
+        <input type="text" th:placeholder="favorite_authors" name="favorite_authors" /> <br /><br />
+        <button type="Submit" class="btn btn-info col-2"> Submit </button>
+    </form>
+</div>
 </body>
 </html>
