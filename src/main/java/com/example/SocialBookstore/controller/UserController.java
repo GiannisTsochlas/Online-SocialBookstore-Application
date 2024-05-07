@@ -11,4 +11,12 @@ public class UserController {
 		
         return "user/dashboard";
     }
+    @RequestMapping("/profile")
+    public  String Createprofile(){
+        return "user/profile";
+    }
+    @RequestMapping("/submit_profile")
+    public  String Subprofile(){
+        return "user/submit_profile";
+    }
 }

@@ -10,28 +10,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 	<title>User Dashboard</title>
+    <style>
+        /* Κεντράρει το περιεχόμενο του h2 */
+        h2 {
+            text-align: center;
+            background-color: #f0f0f0; /* Χρώμα του φόντου */
+            padding: 10px; /* Προσθέτει κενό γύρω από το περιεχόμενο του h2 */
+        }
+    </style>
 </head>
-
-
 <body>
 <div class="container">
 
-  <h2>Welcome to User Dashboard</h2>
-  
-  <br> <br> <hr> <br> <br>
-  
-  <h4>Logged as: <span sec:authentication="name"></span></h4>
-  <h4>Has role: <span sec:authentication="authorities"></span></h4>
-
-	<br> <br> <hr> <br> <br>
-
+  <h2>Social_Bookstore</h2>
+    <h4>Welcome:<span sec:authentication="name"></span></h4>
     <p>
-    	<a th:href="@{/}" class="btn btn-primary btn-sm mb-3">Home</a>
-    	<a th:href="@{/logout}" class="btn btn-danger btn-sm mb-3">Logout</a>
-    
+    	<a th:href="@{/user/dashboard}" class="btn btn-light">Home</a>
+        <a th:href="@{/submit_profile}" class="btn btn-light">Profile</a>
+    	<a th:href="@{/logout}" class="btn btn-light">Logout</a>
+
     </p>
 </div>
-  
-  
+
+
 </body>
 </html>

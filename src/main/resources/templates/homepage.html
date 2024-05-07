@@ -10,38 +10,28 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 	<title>Homepage</title>
+    <style>
+        /* Κεντράρει το περιεχόμενο του h2 */
+        h2 {
+            text-align: center;
+            background-color: #f0f0f0; /* Χρώμα του φόντου */
+            padding: 10px; /* Προσθέτει κενό γύρω από το περιεχόμενο του h2 */
+        }
+    </style>
 </head>
-
 
 <body>
 <div class="container">
-
-  <h2>Welcome to Homepage</h2>
- 
- <br> <br> <hr> <br> <br>
- 
+    <h2>Social_Bookstore</h2>
+    <h4>Welcome to the online social bookstore application that allows you to
+        exchange used books for free </h4>
+    <h6>Press the Login if you have account or Register to create a new account</h6>
   <div sec:authorize="hasRole('ROLE_ANONYMOUS')">
     <p>
     	<a th:href="@{/login}" class="btn btn-primary btn-sm mb-3" th:text="Login"></a>
     	<a th:href="@{/register}" class="btn btn-primary btn-sm mb-3" th:text="Register"></a>
     </p>
   </div>
-
-  <div sec:authorize="isAuthenticated()">
-    <h4>Logged as: <span sec:authentication="name"></span></h4>
-    <h4>Has role: <span sec:authentication="authorities"></span></h4>
-    
-    <br> <br> <hr> <br> <br>
-    
-    <p sec:authorize="hasAuthority('USER')">
-    	<a th:href="@{/user/dashboard}" class="btn btn-primary btn-sm mb-3"> User Dashboard</a>
-    	<a th:href="@{/logout}" class="btn btn-danger btn-sm mb-3"> Logout</a>
-    </p>
-    
-    <p sec:authorize="hasAuthority('ADMIN')">
-    	<a th:href="@{/admin/dashboard}" class="btn btn-primary btn-sm mb-3"> Admin Dashboard</a>
-    	<a th:href="@{/logout}" class="btn btn-danger btn-sm mb-3"> Logout</a>	
-    </p>
 
 </div>
 </body>
