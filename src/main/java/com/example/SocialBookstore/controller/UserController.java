@@ -21,6 +21,7 @@ public class UserController {
         if (!flag){
             return "user/submit_profile_null";
         }
-        return "user/submit_profile";
+        return "user/submit_profile_null";
+        //return "user/submit_profile";
     }
 }

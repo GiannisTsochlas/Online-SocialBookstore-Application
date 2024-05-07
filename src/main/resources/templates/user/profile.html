@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h2>Create Your Profile <span sec:authentication="name"></span></h2>
-    <form th:action="@{/submit_profile}" method="POST" >
+    <form th:action="@{/user/dashboard}" method="POST" >
         <input type="text" name="full_name" th:placeholder="full_name" /> <br /><br />
         <input type="text" th:placeholder="address" name="address" /> <br /><br />
         <input type="number" th:placeholder="age" name="age" /> <br /><br />
@@ -17,6 +17,7 @@
         <input type="text" th:placeholder="book_categories" name="book_categories" /> <br /><br />
         <input type="text" th:placeholder="favorite_authors" name="favorite_authors" /> <br /><br />
         <button type="Submit" class="btn btn-info col-2"> Submit </button>
+        <div th:utext="${successMessage}"></div>
     </form>
 </div>
 </body>
