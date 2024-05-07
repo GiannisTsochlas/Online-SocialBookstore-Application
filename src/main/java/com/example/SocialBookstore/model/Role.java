@@ -1,8 +1,7 @@
 package com.example.SocialBookstore.model;
 
 public enum Role {
-	USER("User"),
-    ADMIN("Admin");
+	USER("User");
 
     private final String value;
 
