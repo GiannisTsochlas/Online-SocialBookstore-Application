@@ -17,21 +17,23 @@
 
 <div class="container">
 
-  <form 
-  action="#" 
+  <form
+  action="#"
   th:action="@{/save}" th:object="${user}" method="post">
     <h3>Registration</h3>
     <input type="text" th:field="*{username}" placeholder="User Name" /> <br/><br/>
      <input type="password" th:field="*{password}" placeholder="Password" /> <br/><br/>
       <input type="hidden" th:field="*{role}" required>
-    
-    <button type="submit" class="btn btn-info col-2">Register</button> 
-    
+
+    <button type="submit" class="btn btn-info col-2">Register</button>
+
     <a th:href="@{/login}" class="btn btn-primary col-2"> Login</a>
-    
+
     <div th:if="${param.error}"><p>Registration Error.</p></div> <br/>
-    
+
     <div th:utext="${successMessage}"></div>
-</form>
+  </form>
+</div>
 </body>
+
 </html>

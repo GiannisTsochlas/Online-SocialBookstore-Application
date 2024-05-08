@@ -17,19 +17,23 @@ public class User implements UserDetails{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
-	
+
 	@Column(name="user_name", unique=true)
 	private String username;
 	
 	@Column(name="password")
 	private String password;
-	
+
     @Enumerated(EnumType.STRING)
     @Column(name="role")
 	private Role role;
-	
+
+	@OneToOne(mappedBy = "user")
+	private Profile profile;
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
+		role= Role.valueOf("USER");
 		 SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.name());
 	     return Collections.singletonList(authority);
 	}
