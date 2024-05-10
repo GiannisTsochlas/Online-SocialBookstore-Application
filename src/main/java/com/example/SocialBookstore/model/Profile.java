@@ -10,16 +10,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Profile")
+@Table(name="profile")
 public class Profile {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "p_id")
     private int p_id;
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="user_id")
-    private User user;
 
     @Column(name = "full_name")
     private String full_name;
@@ -37,6 +33,17 @@ public class Profile {
     private String book_categories;
     @Column(name = "favorite_authors")
     private String favorite_authors;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User users;
+
+    public User getUser() {
+        return users;
+    }
+
+    public void setUser(User users) {
+        this.users = users;
+    }
 
     public int getP_id() {
         return p_id;

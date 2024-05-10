@@ -2,6 +2,7 @@ package com.example.SocialBookstore.model;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Set;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -24,12 +25,29 @@ public class User implements UserDetails{
 	@Column(name="password")
 	private String password;
 
-    @Enumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)
     @Column(name="role")
 	private Role role;
-
-	@OneToOne(mappedBy = "user")
+	@OneToOne(mappedBy = "users")
 	private Profile profile;
+	@OneToMany(mappedBy="users")
+	private Set<Book> book;
+
+	public Set<Book> getBook() {
+		return book;
+	}
+
+	public void setBook(Set<Book> book) {
+		this.book = book;
+	}
+
+	public Profile getProfile() {
+		return profile;
+	}
+
+	public void setProfile(Profile profile) {
+		this.profile = profile;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -37,7 +55,6 @@ public class User implements UserDetails{
 		 SimpleGrantedAuthority authority = new SimpleGrantedAuthority(role.name());
 	     return Collections.singletonList(authority);
 	}
-
 	@Override
 	public String getPassword() {
 		return password;

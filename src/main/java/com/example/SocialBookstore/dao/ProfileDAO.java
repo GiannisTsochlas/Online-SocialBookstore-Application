@@ -4,4 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.SocialBookstore.model.Profile;
 public interface ProfileDAO extends JpaRepository<Profile,Integer> {
+    public Profile findById(int theId);
 }

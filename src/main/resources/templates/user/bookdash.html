@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <!-- Required meta tags -->
+
+    <!-- Set the Character set for the page -->
     <meta charset="utf-8">
+
+    <!-- Let the page adapt to client device -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- Link to external resource (css, search, etc.) -->
+    <!-- Link to Bootstrap CSS in this case -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-
-	<title>User Dashboard</title>
     <style>
         /* Κεντράρει το περιεχόμενο του h2 */
         h2 {
@@ -18,21 +21,19 @@
             padding: 10px; /* Προσθέτει κενό γύρω από το περιεχόμενο του h2 */
         }
     </style>
+    <title>Employee Directory</title>
 </head>
-<body>
-<div class="container">
 
-  <h2>Social_Bookstore</h2>
+<body>
+
+<div class="container">
+    <h2>Social_Bookstore</h2>
     <h4>Welcome:<span sec:authentication="name"></span></h4>
     <p>
-    	<a th:href="@{/user/dashboard}" class="btn btn-light">Home</a>
-        <a th:href="@{/submit_profile}" class="btn btn-light">Profile</a>
-        <a th:href="@{/user/bookdash}" class="btn btn-light">Book</a>
-    	<a th:href="@{/logout}" class="btn btn-light">Logout</a>
-
+        <a th:href="@{/user/dashboard}" class="btn btn-light">Home</a>
+        <a th:href="@{/user/bookdash/addBook}" class="btn btn-light">AddBookOffer</a>
+        <a th:href="@{/MyBooks}" class="btn btn-light">MyBookOfferRequests</a>
     </p>
 </div>
-
-
 </body>
 </html>

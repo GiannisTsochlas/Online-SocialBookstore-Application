@@ -8,20 +8,37 @@
 </head>
 
 <body>
+
 <div class="container">
-
-    <h2>Your Profile</h2>
-    <h4>Full Name:</h4>
-    <h4>Address:</h4>
-    <h4>Age:</h4>
-    <h4>Phone Number:</h4>
-    <h4>Preferred Book Categories:></h4>
-    <h4>Favorite Authors:</h4>
-    <p>
-        <a th:href="@{/profile}" class="btn btn-light">Edit Profile</a>
-        <a th:href="@{/user/dashboard}" class="btn btn-light">Home</a>
-    </p>
+    <!-- Check if profile is null or empty -->
+    <th:block th:if="${profile == null or #lists.isEmpty(profile)}">
+        <h2>Your Profile</h2>
+        <h4>Full Name: Null</h4>
+        <h4>Address: Null</h4>
+        <h4>Age: Null</h4>
+        <h4>Phone Number: Null</h4>
+        <h4>Preferred Book Categories: Null</h4>
+        <p>
+            <a th:href="@{/profile}" class="btn btn-light">Edit Profile</a>
+            <a th:href="@{/user/dashboard}" class="btn btn-light">Home</a>
+        </p>
+    </th:block>
+    <!-- If profile is not null or empty, iterate over it -->
+    <th:block th:if="${profile != null and not #lists.isEmpty(profile)}">
+        <h2>Your Profile</h2>
+        <!-- Iterate over each tempEmployee in profile -->
+        <tr th:each="tempEmployee : ${profile}">
+            <h4>Full Name:<td th:text="${tempEmployee.full_name}"/></h4>
+            <h4>Address:<td th:text="${tempEmployee.address}"/></h4>
+            <h4>Age:<td th:text="${tempEmployee.age}"/></h4>
+            <h4>Phone Number:<td th:text="${tempEmployee.phone_number}"/></h4>
+            <h4>Preferred Book Categories:<td th:text="${tempEmployee.book_categories}"/></h4>
+            <p>
+                <a th:href="@{/profile}" class="btn btn-light">Edit Profile</a>
+                <a th:href="@{/user/dashboard}" class="btn btn-light">Home</a>
+            </p>
+        </tr>
+    </th:block>
 </div>
-
 </body>
 </html>
