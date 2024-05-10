@@ -17,7 +17,7 @@ public class Book {
     private String category;
     @Column(name="summary")
     private String summary;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="user_id")
     private User users;
 

@@ -1,6 +1,5 @@
 package com.example.SocialBookstore.controller;
 
-import com.example.SocialBookstore.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +17,7 @@ public class BookController {
 
     @RequestMapping("/user/bookdash")
     public String Homebook(){
-        return"user/bookdash";
+        return"Book/bookdash";
     }
     @RequestMapping("/user/bookdash/addBook")
     public String AddBook(){
@@ -27,7 +26,7 @@ public class BookController {
     @RequestMapping("/saveBook")
     public String saveBook(@ModelAttribute("book") Book book, Model model){
         BookService.saveUserBook(book);
-        return "user/bookdash";
+        return "Book/bookdash";
     }
     @RequestMapping("/MyBooks")
     public String MyBooks(Model theModel){
