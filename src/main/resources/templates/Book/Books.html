@@ -23,17 +23,13 @@
         <thead class="thead-dark">
         <tr>
             <th>book_title</th>
-            <th>authors</th>
-            <th>category</th>
-            <th>summary</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="tempEmployee : ${Books}">
             <td th:text="${tempEmployee.book_title}" />
-            <td th:text="${tempEmployee.authors}" />
-            <td th:text="${tempEmployee.category}" />
-            <td th:text="${tempEmployee.summary}" />
+            <td><a th:href="@{/delete(id=${tempEmployee.offer_id})}" class="btn btn-danger btn-lg" style="margin-right: 20px">Delete</a></td>
         </tr>
         </tbody>
     </table>
