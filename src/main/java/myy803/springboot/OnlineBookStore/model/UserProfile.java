@@ -35,21 +35,6 @@ public class UserProfile{
     @Column(name="phone_number")
     private String phoneNumber;
 
-    /*@Column(name="favouriteBookAuthors")
-    private List<BookAuthor> favouriteBookAuthors;
-
-    @Column(name="favouriteBookCategories")
-    private List<BookCategory> favouriteBookCategories;*/
-
-    //@Column(name="bookOffers")
-   // private List<Book> bookOffers;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name="role")
-    private Role role;
-
-
-
 
     public String getUsername() {
         return username;
@@ -65,18 +50,9 @@ public class UserProfile{
         return id;
     }
 
-    public Role getRole() {
-        return role;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
 
 
     // Getters and setters
@@ -112,39 +88,4 @@ public class UserProfile{
         this.phoneNumber = phoneNumber;
     }
 
-    /*public List<BookCategory> getPreferredBookCategories() {
-        return favouriteBookCategories;
-    }
-
-    public void setPreferredBookCategories(List<BookCategory> favouriteBookCategories) {
-        this.favouriteBookCategories = favouriteBookCategories;
-    }
-
-    public List<BookAuthor> getFavoriteAuthors() {
-        return favouriteBookAuthors;
-    }
-
-    public void setFavoriteAuthors(List<BookAuthor> favouriteBookAuthors) {
-        this.favouriteBookAuthors = favouriteBookAuthors;
-    }*/
-
-   /* @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }*/
 }

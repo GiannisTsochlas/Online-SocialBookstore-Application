@@ -17,16 +17,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE `usersprofile` (
-                                `id` int NOT NULL AUTO_INCREMENT,
-                                `user_name` text DEFAULT NULL,
-                                `full_name` text DEFAULT NULL,
-                                `address` text DEFAULT NULL,
-                                `age` text DEFAULT NULL,
-                                `phone_number` text DEFAULT NULL,
-                                `favouriteBookAuthors` text DEFAULT NULL,
-                                `favouriteBookCategories` text DEFAULT NULL,
-
-                                `role` text DEFAULT NULL,
-                                PRIMARY KEY (`id`)
+    `id` int NOT NULL AUTO_INCREMENT,
+    `user_name` text DEFAULT NULL,
+    `full_name` text DEFAULT NULL,
+    `address` text DEFAULT NULL,
+    `age` text DEFAULT NULL,
+    `phone_number` text DEFAULT NULL,
+    `favouriteBookAuthors` text DEFAULT NULL,
+    `favouriteBookCategories` text DEFAULT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+CREATE TABLE `books` (
+    `book_id` int NOT NULL AUTO_INCREMENT,
+    `book_title` text DEFAULT NULL,
+    `authors` text DEFAULT NULL,
+    `category` text DEFAULT NULL,
+    `username` text DEFAULT NULL,
+    PRIMARY KEY (`book_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
