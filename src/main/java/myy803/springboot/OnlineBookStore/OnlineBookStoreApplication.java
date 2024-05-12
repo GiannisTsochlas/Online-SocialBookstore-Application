@@ -1,14 +1,13 @@
-package com.example.SocialBookstore;
+package myy803.springboot.OnlineBookStore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SocialBookstoreApplication {
+public class OnlineBookStoreApplication {
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(SocialBookstoreApplication.class, args);
+		SpringApplication.run(OnlineBookStoreApplication.class, args);
 	}
 
 }

@@ -43,24 +43,25 @@
 <body>
 <div class="container-fluid text-center">
     <h3  class="display-6">Social Bookstore</h3>
+    <h4>Logged as: <span sec:authentication="name"></span></h4>
 </div>
 </body>
 </html>
-    <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    	<a th:href="@{/user/dashboard}" class="btn btn-primary btn-lg" style="margin-right: 90px">Home</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a th:href="@{/submit_profile}" class="btn btn-primary btn-lg" style="margin-right: 90px">Profile</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a th:href="@{/user/bookdash}" class="btn btn-primary btn-lg" style="margin-right: 90px">Book</a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    	<a th:href="@{/logout}" class="btn btn-danger btn-lg" style="margin-right: 90px">Logout</a>
+<p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/}" class="btn btn-primary btn-lg" style="margin-right: 90px">Home</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/user/profile}" class="btn btn-primary btn-lg" style="margin-right: 90px">Profile</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/user/bookdash}" class="btn btn-primary btn-lg" style="margin-right: 90px">Book</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a th:href="@{/logout}" class="btn btn-danger btn-lg" style="margin-right: 90px">Logout</a>
 
-    </p>
+</p>
 </div>
 <div class="container-fluid2 text-center">
-    <img src="/static/logo.jpg" alt="logo" style="width: 350px; height: 250px;">
+    <img th:src="@{/logo.jpg}" alt="logo" style="width: 350px; height: 250px;">
 </div>
 </body>
 </html>
