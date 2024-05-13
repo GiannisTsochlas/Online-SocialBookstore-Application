@@ -29,7 +29,7 @@ CREATE TABLE `usersprofile` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 CREATE TABLE `books` (
     `book_id` int NOT NULL AUTO_INCREMENT,
-    `book_title` text DEFAULT NULL,
+    `title` text DEFAULT NULL,
     `authors` text DEFAULT NULL,
     `category` text DEFAULT NULL,
     `username` text DEFAULT NULL,

@@ -44,7 +44,7 @@
 <div class="container">
     <h2>Book Form</h2>
     <form action="@{/saveBook}" th:action="@{/saveBook}" th:object="${book}" method="post">
-        <input type="text" th:field="*{book_title}" placeholder="book_title" /> <br/><br/>
+        <input type="text" th:field="*{title}" placeholder="title" /> <br/><br/>
         <input type="text" th:field="*{authors}" placeholder="authors" /> <br/><br/>
         <input type="text" th:field="*{category}" placeholder="category" /> <br/><br/>
         <button type="submit" class="btn btn-info col-2">Submit</button>

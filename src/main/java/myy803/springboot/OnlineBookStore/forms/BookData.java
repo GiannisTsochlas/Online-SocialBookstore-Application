@@ -3,16 +3,16 @@ package myy803.springboot.OnlineBookStore.forms;
 import jakarta.persistence.Column;
 
 public class BookData {
-    private String book_title;
+    private String title;
     private String authors;
     private String category;
 
-    public String getBook_title() {
-        return book_title;
+    public String title() {
+        return title;
     }
 
     public void setBook_title(String book_title) {
-        this.book_title = book_title;
+        this.title = title;
     }
 
     public String getAuthors() {

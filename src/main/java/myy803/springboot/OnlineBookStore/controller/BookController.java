@@ -11,6 +11,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,5 +63,18 @@ public class BookController {
     public String deleteBook(@RequestParam("BookId") int theId){
         BookService.deleteById(theId);
         return "redirect:user/bookdash";
+    }
+    @RequestMapping("/user/searchdash")
+    public String searchdash(){
+        return"Book/booksearch";
+    }
+
+    @GetMapping("/search")
+    public String searchBooks(@RequestParam(name = "title", required = false) String title,
+                              @RequestParam(name = "author", required = false) String author,
+                              Model model) {
+        List<Book> books = BookDAO.findByTitleAndAuthors(title, author);
+        model.addAttribute("books", books);
+        return "Book/searchres";
     }
 }
