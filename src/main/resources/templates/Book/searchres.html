@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-<a th:href="@{/book/back}" class="btn btn-primary btn-lg" style="margin-right: 90px">Back</a>
+<a th:href="@{/user/searchdash}" class="btn btn-primary btn-lg" style="margin-right: 90px">Back</a>
 <div class="container-fluid text-center">
     <h3  class="display-6">Social Bookstore</h3>
     <h4>Logged as: <span sec:authentication="name"></span></h4>
@@ -51,12 +51,14 @@
     <tr>
         <th>Title</th>
         <th>Author</th>
+        <th>Owner</th>
         <th>Actions</th>
     </tr>
     <tbody>
     <tr th:each="tempEmployee : ${books}">
         <td th:text="${tempEmployee.title}" />
         <td th:text="${tempEmployee.authors}" />
+        <td th:text="${tempEmployee.username}" />
         <td>
             <a  class="btn btn-info btn-sm">Requests</a>
         </td>

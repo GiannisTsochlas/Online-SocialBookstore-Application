@@ -72,9 +72,14 @@ public class BookController {
     @GetMapping("/search")
     public String searchBooks(@RequestParam(name = "title", required = false) String title,
                               @RequestParam(name = "author", required = false) String author,
-                              Model model) {
-        List<Book> books = BookDAO.findByTitleAndAuthors(title, author);
-        model.addAttribute("books", books);
+                              @RequestParam(name = "searchType", required = false) String searchType, Model model) {
+        if(searchType.equals("exact")) {
+            List<Book> books = BookDAO.findByTitleAndAuthors(title, author);
+            model.addAttribute("books", books);
+        }else {
+            List<Book> books = BookDAO.findByAuthors(author);
+            model.addAttribute("books", books);
+        }
         return "Book/searchres";
     }
 }

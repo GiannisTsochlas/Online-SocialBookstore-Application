@@ -23,8 +23,6 @@ CREATE TABLE `usersprofile` (
     `address` text DEFAULT NULL,
     `age` text DEFAULT NULL,
     `phone_number` text DEFAULT NULL,
-    `favouriteBookAuthors` text DEFAULT NULL,
-    `favouriteBookCategories` text DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 CREATE TABLE `books` (

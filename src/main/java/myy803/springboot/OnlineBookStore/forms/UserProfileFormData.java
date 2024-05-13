@@ -7,8 +7,6 @@ public class UserProfileFormData {
     private String address;
     private int age;
     private String phoneNumber;
-    private List<String> favoriteCategories;
-    private List<String> favoriteAuthors;
 
     
     // Getters and setters
@@ -44,22 +42,6 @@ public class UserProfileFormData {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public List<String> getPreferredBookCategories() {
-        return favoriteCategories;
-    }
-
-    public void setPreferredBookCategories(List<String> favoriteCategories) {
-        this.favoriteCategories = favoriteCategories;
-    }
-
-    public List<String> getFavoriteAuthors() {
-        return favoriteAuthors;
-    }
-
-    public void setFavoriteAuthors(List<String> favoriteAuthors) {
-        this.favoriteAuthors = favoriteAuthors;
     }
 
 }
