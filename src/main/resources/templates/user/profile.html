@@ -49,6 +49,8 @@
     <h4>Age: <span th:text="${userProfile!= null ? userProfile.age : ''}"></span></h4>
     <h4>Address: <span th:text="${userProfile!= null ? userProfile.address: ''}"></span></h4>
     <h4>Phone Number: <span th:text="${userProfile!= null ? userProfile.phoneNumber : ''}"></span></h4>
+    <h4>Category: <span th:text="${userProfile!= null ? userProfile.category : ''}"></span></h4>
+    <h4>Author: <span th:text="${userProfile!= null ? userProfile.author : ''}"></span></h4>
      <hr>
     <p>
         <a th:href="@{/user/form}" class="btn btn-danger btn-sm mb-3">Edit Profile</a>

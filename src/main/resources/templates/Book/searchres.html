@@ -55,12 +55,12 @@
         <th>Actions</th>
     </tr>
     <tbody>
-    <tr th:each="tempEmployee : ${books}">
-        <td th:text="${tempEmployee.title}" />
-        <td th:text="${tempEmployee.authors}" />
-        <td th:text="${tempEmployee.username}" />
+    <tr th:each="tempbook : ${books}">
+        <td th:text="${tempbook.title}" />
+        <td th:text="${tempbook.authors}" />
+        <td th:text="${tempbook.username}" />
         <td>
-            <a  class="btn btn-info btn-sm">Requests</a>
+            <a th:href="@{/requestBook(title=${tempbook.title},owner=${tempbook.username})}" class="btn btn-info btn-sm" onclick="if (!(confirm('Are you sure you want to request for this book?'))) return false">Requests</a>
         </td>
     </tr>
     </tbody>

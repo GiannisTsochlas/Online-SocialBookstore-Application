@@ -49,11 +49,27 @@
         <input type="text" th:field="*{address}" placeholder="Address" /> <br/><br/>
         <input type="number" th:field="*{age}" placeholder="Age" /> <br/><br/>
         <input type="text" th:field="*{phoneNumber}" placeholder="Phone_Number" /> <br/><br/>
+        <h2>Favorite Categories</h2>
+        <label for="categories">Select your favorite categories:</label><br>
+        <select id="categories" th:field="*{category}" placeholder="Category" multiple>
+            <option value="Art">Art</option>
+            <option value="Comic">Comic</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Biographies">Biographies</option>
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Literature">Literature</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Crime">Crime</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <h2>Favorite Author</h2>
+        <input type="text" th:field="*{author}" placeholder="Author"><br><br>
 
         <button type="submit" class="btn btn-info col-2">Submit</button>
         <a th:href="@{/user/profile}" class="btn btn-info col-2"> Back</a>
-
-        <div th:if="${param.error}"><p>Registration Error.</p></div> <br/>
 
         <div th:utext="${successMessage}"></div>
     </form>

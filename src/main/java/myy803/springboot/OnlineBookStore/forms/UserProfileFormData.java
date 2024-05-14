@@ -7,6 +7,8 @@ public class UserProfileFormData {
     private String address;
     private int age;
     private String phoneNumber;
+    private String Category;
+    private String Author;
 
     
     // Getters and setters
@@ -44,4 +46,19 @@ public class UserProfileFormData {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getCategory() {
+        return Category;
+    }
+
+    public void setCategory(String category) {
+        Category = category;
+    }
+
+    public String getAuthor() {
+        return Author;
+    }
+
+    public void setAuthor(String author) {
+        Author = author;
+    }
 }

@@ -1,11 +1,15 @@
 package myy803.springboot.OnlineBookStore.controller;
 
 import myy803.springboot.OnlineBookStore.dao.BookDAO;
+import myy803.springboot.OnlineBookStore.dao.UserProfileMapper;
 import myy803.springboot.OnlineBookStore.forms.BookData;
 import myy803.springboot.OnlineBookStore.forms.UserProfileFormData;
 import myy803.springboot.OnlineBookStore.model.Book;
+import myy803.springboot.OnlineBookStore.model.User;
 import myy803.springboot.OnlineBookStore.model.UserProfile;
+import myy803.springboot.OnlineBookStore.model.bookrequest;
 import myy803.springboot.OnlineBookStore.service.BookService;
+import myy803.springboot.OnlineBookStore.service.RequestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class BookController {
@@ -25,6 +30,11 @@ public class BookController {
     private BookService BookService;
     @Autowired
     private BookDAO BookDAO;
+    @Autowired
+    private RequestService requestService;
+
+    @Autowired
+    private UserProfileMapper profileMapper;
     private String getUsername() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
@@ -81,5 +91,26 @@ public class BookController {
             model.addAttribute("books", books);
         }
         return "Book/searchres";
+    }
+    @RequestMapping("/requestBook")
+    public String requestbook(@ModelAttribute("request") bookrequest bookrequest, Model model, @RequestParam("title") String title, @RequestParam("owner") String owner){
+        String loggedInUsername = getUsername();
+        bookrequest.setUsername(loggedInUsername);
+        bookrequest.setTitle(title);
+        bookrequest.setOwner(owner);
+        requestService.save(bookrequest);
+        return "user/dashboard";
+    }
+    @RequestMapping("/recommended")
+    public String recommended(Model theModel){
+        String loggedInUsername = getUsername();
+        Optional<UserProfile> profileOptional = profileMapper.findByUsername(loggedInUsername);
+        if (profileOptional.isPresent()) {
+            UserProfile profile = profileOptional.get();
+            List<Book> books = BookDAO.findByCategoryOrAuthors(profile.getCategory(), profile.getAuthor());
+            theModel.addAttribute("Books", books);
+            return "Book/searchres";
+        }
+        return "user/booksearch";
     }
 }

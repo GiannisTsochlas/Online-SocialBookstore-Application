@@ -26,6 +26,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 			userProfileFormData.setAddress(userProfile.getAddress());
 			userProfileFormData.setAge(userProfile.getAge());
 			userProfileFormData.setPhoneNumber(userProfile.getPhoneNumber());
+			userProfileFormData.setCategory(userProfile.getCategory());
+			userProfileFormData.setAuthor(userProfile.getAuthor());
 
 			return userProfileFormData;
 		} else {
@@ -37,6 +39,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 		profile.setAddress(formData.getAddress());
 		profile.setAge(formData.getAge());
 		profile.setPhoneNumber(formData.getPhoneNumber());
+		profile.setCategory(formData.getCategory());
+		profile.setAuthor(formData.getAuthor());
 		return profile;
 	}
 	private UserProfileFormData convertToUserProfileFormData(UserProfile userProfile) {
@@ -45,6 +49,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 		formData.setAddress(userProfile.getAddress());
 		formData.setAge(userProfile.getAge());
 		formData.setPhoneNumber(userProfile.getPhoneNumber());
+		formData.setCategory(userProfile.getCategory());
+		formData.setAuthor(userProfile.getAuthor());
 		return formData;
 	}
 	public void save(UserProfileFormData userProfileFormData , UserProfile userProfile) {
@@ -58,6 +64,8 @@ public class UserProfileServiceImpl implements UserProfileService {
 			userProfile.setAddress(userProfileFormData.getAddress());
 			userProfile.setAge(userProfileFormData.getAge());
 			userProfile.setPhoneNumber(userProfileFormData.getPhoneNumber());
+			userProfile.setCategory(userProfileFormData.getCategory());
+			userProfile.setAuthor(userProfileFormData.getAuthor());
 			userProfileMapper.save(userProfile);
 		}
 	}

@@ -23,6 +23,8 @@ CREATE TABLE `usersprofile` (
     `address` text DEFAULT NULL,
     `age` text DEFAULT NULL,
     `phone_number` text DEFAULT NULL,
+    `category` text DEFAULT NULL,
+    `author` text DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 CREATE TABLE `books` (
@@ -32,5 +34,12 @@ CREATE TABLE `books` (
     `category` text DEFAULT NULL,
     `username` text DEFAULT NULL,
     PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+CREATE TABLE `request` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `username` text DEFAULT NULL,
+    `title` text DEFAULT NULL,
+    `owner` text DEFAULT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
