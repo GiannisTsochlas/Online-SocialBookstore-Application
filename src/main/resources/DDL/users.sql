@@ -40,6 +40,7 @@ CREATE TABLE `request` (
     `username` text DEFAULT NULL,
     `title` text DEFAULT NULL,
     `owner` text DEFAULT NULL,
+    `answer` text DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 

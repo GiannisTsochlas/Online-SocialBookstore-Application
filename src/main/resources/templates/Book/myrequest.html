@@ -41,22 +41,28 @@
     </style>
 </head>
 <body>
-<a th:href="@{/book/back}" class="btn btn-primary btn-lg" style="margin-right: 90px">Back</a>
+<a th:href="@{/user/bookdash}" class="btn btn-primary btn-lg" style="margin-right: 90px">Back</a>
 <div class="container-fluid text-center">
     <h3  class="display-6">Social Bookstore</h3>
     <h4>Logged as: <span sec:authentication="name"></span></h4>
 </div>
-<a th:href="@{/recommended}" class="btn btn-primary btn-lg" style="margin-right: 90px">Recomended Book Offers</a>
-<a th:href="@{/Book/RequestsMade}" class="btn btn-primary btn-lg" style="margin-right: 90px">Requests</a>
-<h1>Search For Books</h1>
-<form th:action="@{/search}" method="get">
-    <input type="text" name="title" placeholder="Title...">
-    <input type="text" name="author" placeholder="Author...">
-    <select name="searchType">
-        <option value="exact">Exact</option>
-        <option value="approximate">Approximate</option>
-    </select>
-    <button type="submit">Search</button>
-</form>
+<h2>Search Results</h2>
+<table class="table table-bordered table-striped table-dark">
+    <tr>
+        <th>Title</th>
+        <th>Name of user</th>
+        <th>Actions</th>
+    </tr>
+    <tbody>
+    <tr th:each="tempbook : ${req}">
+        <td th:text="${tempbook.title}" />
+        <td th:text="${tempbook.username}" />
+        <td>
+            <a th:href="@{/answer(id=${tempbook.id})}" class="btn btn-info btn-sm">Take the Book</a>
+            <a th:href="@{/info(user=${tempbook.username})}" class="btn btn-primary btn-sm" >Contact Information</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

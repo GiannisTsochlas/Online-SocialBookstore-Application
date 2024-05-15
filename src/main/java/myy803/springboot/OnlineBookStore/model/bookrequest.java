@@ -15,6 +15,9 @@ public class bookrequest {
     @Column(name="owner")
     private String owner;
 
+    @Column(name="answer")
+    private String answer;
+
     public int getId() {
         return id;
     }
@@ -45,5 +48,13 @@ public class bookrequest {
 
     public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }
