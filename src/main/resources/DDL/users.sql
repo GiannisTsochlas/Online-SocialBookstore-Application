@@ -6,6 +6,10 @@ USE `secure_users_directory`;
 --
 
 DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `usersprofile`;
+DROP TABLE IF EXISTS `books`;
+DROP TABLE IF EXISTS `request`;
 
 
 CREATE TABLE `users` (
