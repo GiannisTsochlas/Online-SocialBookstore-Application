@@ -60,7 +60,7 @@
         <td th:text="${tempbook.authors}" />
         <td th:text="${tempbook.username}" />
         <td>
-            <a th:href="@{/requestBook(title=${tempbook.title},owner=${tempbook.username})}" class="btn btn-info btn-sm" onclick="if (!(confirm('Are you sure you want to request for this book?'))) return false">Requests</a>
+            <a th:href="@{/requestBook(title=${tempbook.title},owner=${tempbook.username})}" class="btn btn-info btn-sm" onclick="if (!(confirm('Are you sure you want to request for this book?'))) return false">Request</a>
         </td>
     </tr>
     </tbody>

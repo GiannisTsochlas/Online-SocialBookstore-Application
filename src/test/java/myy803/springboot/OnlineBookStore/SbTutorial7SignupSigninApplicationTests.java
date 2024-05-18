@@ -1,4 +1,4 @@
-package myy803.springboot.sb_tutorial_7_signup_signin;
+package myy803.springboot.OnlineBookStore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

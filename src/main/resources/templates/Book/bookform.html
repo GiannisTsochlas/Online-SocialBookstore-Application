@@ -46,7 +46,20 @@
     <form action="@{/saveBook}" th:action="@{/saveBook}" th:object="${book}" method="post">
         <input type="text" th:field="*{title}" placeholder="title" /> <br/><br/>
         <input type="text" th:field="*{authors}" placeholder="authors" /> <br/><br/>
-        <input type="text" th:field="*{category}" placeholder="category" /> <br/><br/>
+        <label for="categories">Select category:</label><br>
+        <select id="categories" th:field="*{category}" placeholder="Category" multiple>
+            <option value="Art">Art</option>
+            <option value="Comic">Comic</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Biographies">Biographies</option>
+            <option value="History">History</option>
+            <option value="Science">Science</option>
+            <option value="Literature">Literature</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Crime">Crime</option>
+            <option value="Other">Other</option>
+        </select><br><br>
         <button type="submit" class="btn btn-info col-2">Submit</button>
         <a th:href="@{/user/bookdash}" class="btn btn-info col-2"> Back</a>
 
