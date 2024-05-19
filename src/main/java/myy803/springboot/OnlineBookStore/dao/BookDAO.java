@@ -11,4 +11,5 @@ public interface BookDAO extends JpaRepository<Book,Integer> {
     List<Book> findByTitleAndAuthors(String book_title,String authors);
     List<Book> findByAuthors(String authors);
     List<Book> findByCategoryOrAuthors(String Category,String authors);
+    
 }

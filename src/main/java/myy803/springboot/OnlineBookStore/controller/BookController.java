@@ -121,7 +121,7 @@ public class BookController {
         if (profileOptional.isPresent()) {
             UserProfile profile = profileOptional.get();
             List<Book> books = BookDAO.findByCategoryOrAuthors(profile.getCategory(), profile.getAuthor());
-            theModel.addAttribute("Books", books);
+            theModel.addAttribute("books", books);
             return "Book/searchres";
         }
         return "Book/booksearch";
