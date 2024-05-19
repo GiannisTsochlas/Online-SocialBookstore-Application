@@ -12,4 +12,6 @@ public interface RequestDAO extends JpaRepository<bookrequest,Integer> {
 
     List<bookrequest> findById(int id);
 
+    List<bookrequest> findByTitleAndOwner(String title,String username);
+
 }

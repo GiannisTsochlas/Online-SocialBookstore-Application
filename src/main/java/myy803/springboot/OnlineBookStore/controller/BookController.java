@@ -6,10 +6,10 @@ import myy803.springboot.OnlineBookStore.dao.UserProfileMapper;
 import myy803.springboot.OnlineBookStore.forms.BookData;
 import myy803.springboot.OnlineBookStore.forms.UserProfileFormData;
 import myy803.springboot.OnlineBookStore.model.Book;
-import myy803.springboot.OnlineBookStore.model.User;
 import myy803.springboot.OnlineBookStore.model.UserProfile;
 import myy803.springboot.OnlineBookStore.model.bookrequest;
 import myy803.springboot.OnlineBookStore.service.BookService;
+import myy803.springboot.OnlineBookStore.service.BookServiceImp;
 import myy803.springboot.OnlineBookStore.service.RequestService;
 import myy803.springboot.OnlineBookStore.service.UserProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ import java.util.Optional;
 @Controller
 public class BookController {
     @Autowired
-    private BookService BookService;
+    private BookServiceImp BookService;
     @Autowired
     private BookDAO BookDAO;
     @Autowired
@@ -137,9 +137,9 @@ public class BookController {
     }
 
     @RequestMapping("/Book/Myrequests")
-    public String Myrequests(Model theModel) {
+    public String Myrequests(@RequestParam("title") String title,Model theModel) {
         String loggedInUsername = getUsername();
-        List<bookrequest> req = RequestDAO.findByOwner(loggedInUsername);
+        List<bookrequest> req = RequestDAO.findByTitleAndOwner(title,loggedInUsername);
         theModel.addAttribute("req", req);
         return "Book/myrequest";
     }
@@ -148,9 +148,17 @@ public class BookController {
     public String answer(@RequestParam("id") int theId) {
         List<bookrequest> req = RequestDAO.findById(theId);
         for (bookrequest request : req) {
+            request.setStatus(true);
             request.setAnswer("You can Take the Book");
         }
-        BookDAO.deleteById(theId);
+        List<bookrequest> allrequests = RequestDAO.findAll();
+        for (bookrequest request : allrequests) {
+            if (request.getStatus() == null){
+                request.setStatus(false);
+                request.setAnswer("another user has taken the book");
+            }
+        }
+
         return "redirect:/user/bookdash";
     }
     @RequestMapping("/info")

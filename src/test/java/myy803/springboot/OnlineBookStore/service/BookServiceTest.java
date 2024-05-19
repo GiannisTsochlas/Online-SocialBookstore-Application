@@ -2,11 +2,10 @@ package myy803.springboot.OnlineBookStore.service;
 
 import myy803.springboot.OnlineBookStore.dao.BookDAO;
 import myy803.springboot.OnlineBookStore.model.Book;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
+
 import java.util.ArrayList;
 import java.util.List;
 import static org.mockito.Mockito.*;
@@ -17,7 +16,7 @@ public class BookServiceTest {
     private BookDAO bookDAO;
 
     @InjectMocks
-    private BookService bookService;
+    private BookServiceImp bookService;
 
 
     @Test

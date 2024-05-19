@@ -17,6 +17,9 @@ public class bookrequest {
 
     @Column(name="answer")
     private String answer;
+    @Column(name="status")
+    private Boolean status; // "PENDING", "ACCEPTED", "REJECTED"
+
 
     public int getId() {
         return id;
@@ -56,5 +59,13 @@ public class bookrequest {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

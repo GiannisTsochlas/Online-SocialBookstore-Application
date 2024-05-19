@@ -1,18 +1,24 @@
 package myy803.springboot.OnlineBookStore.model;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="books")
 public class Book {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="book_id")
     private int offer_id;
+
     @Column(name="title")
     private String title;
+
     @Column(name="authors")
     private String authors;
+
     @Column(name="category")
     private String category;
 
@@ -28,6 +34,7 @@ public class Book {
     }
 
     public Book() {}
+
 
     public int getOffer_id() {
         return offer_id;
