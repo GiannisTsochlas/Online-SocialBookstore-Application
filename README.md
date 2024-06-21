@@ -20,8 +20,7 @@ The Social Bookstore Application is an online platform designed to facilitate th
 
 ## Installation
 
-just run throw a modern compailer
-
+just run throw a modern compailer paste the [localhost](http://localhost:8080/) on your browser and thas all welcome to our Online_Social_Bookstore web app !
 
 ## Technologies Used
 
